@@ -85,12 +85,12 @@ namespace TechTalk.JiraRestClient
 
         public IEnumerable<Issue<TIssueFields>> GetIssuesByQuery(string projectKey, string issueType, string jqlQuery)
         {
-            return EnumerateIssuesInternal(projectKey, issueType, jqlQuery);
+            return EnumerateIssuesInternal(projectKey, issueType, null, jqlQuery);
         }
 
         public IEnumerable<Issue<TIssueFields>> GetIssuesByQuery(string jqlQuery)
         {
-            return EnumerateIssuesInternal("", "", jqlQuery);
+            return EnumerateIssuesInternal("", "", null, jqlQuery);
         }
 
         public IEnumerable<Issue<TIssueFields>> EnumerateIssues(String projectKey)
